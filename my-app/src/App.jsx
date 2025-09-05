@@ -1,6 +1,4 @@
 import React from "react";
-// import ProductTab from "./Components/ProductTab";
-// import MsgBox from "./Components/MsgBox";
 import Button from "./Components/Button";
 import Form from "./Components/Form";
 
