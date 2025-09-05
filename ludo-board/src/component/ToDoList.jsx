@@ -54,7 +54,7 @@ export default function ToDoList() {
         ✅ Tasks Todo
       </h1>
 
-      //* Input + Button */
+      /* Input + Button */
       <div style={{ display: "flex", marginBottom: "20px" }}>
         <input
           type="text"
