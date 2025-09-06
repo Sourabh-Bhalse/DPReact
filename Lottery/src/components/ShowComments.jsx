@@ -1,4 +1,4 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
 
 export default function ShowComments({ comments }) {
   const [show, setShow] = useState(false);

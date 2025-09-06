@@ -150,3 +150,51 @@
   color: #ff9800;
   margin-bottom: 6px;
 }
+
+.comment-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea, select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  background: #1f6feb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1554b0;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+}
+
+.comment {
+  background: #f7f7f7;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+}

@@ -3,13 +3,15 @@ import Lottery from "./components/Lottery";
 import Form from "./components/Form";
 import Comments from "./components/Comment";
 import CommentBox from "./components/CommentBox";
+import Joker from "./components/Joker";
 
 export default function App() {
   return (
     <div>
-       <Form />
+       {/* <Form /> */}
        <br /><br /><hr />
-       <Comments />
+       {/* <Comments /> */}
+       < Joker />
        <br /><br /><hr />
        <CommentBox/>
        <hr />

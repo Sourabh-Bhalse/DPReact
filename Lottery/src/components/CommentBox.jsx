@@ -1,77 +1,80 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import ShowComments from "./ShowComments";
 import "../styling/Comment.css";
 
+// ✅ Validation schema using Yup
+const CommentSchema = Yup.object().shape({
+  userName: Yup.string()
+    .min(2, "Too Short!")
+    .max(30, "Too Long!")
+    .required("Name is required"),
+  rating: Yup.number().min(1).max(5).required(),
+  comment: Yup.string()
+    .min(5, "Comment is too short")
+    .required("Comment is required"),
+});
+
 export default function CommentBox() {
-  const [formData, setFormData] = useState({
-    userName: "",
-    rating: "5",
-    comment: "",
-  });
-
   const [comments, setComments] = useState([]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!formData.userName.trim() || !formData.comment.trim()) {
-      alert("⚠️ Please fill out name and comment!");
-      return;
-    }
-
-    setComments([...comments, formData]);
-    setFormData({ userName: "", rating: "5", comment: "" });
-  };
 
   return (
     <div className="comment-container">
       <h2>Leave a Comment</h2>
 
-      <form onSubmit={handleSubmit} className="comment-form">
-        {/* User Name */}
-        <input
-          type="text"
-          name="userName"
-          placeholder="Enter your name"
-          value={formData.userName}
-          onChange={handleChange}
-        />
+      <Formik
+        initialValues={{ userName: "", rating: "5", comment: "" }}
+        validationSchema={CommentSchema}
+        onSubmit={(values, { resetForm }) => {
+          setComments([...comments, values]);
+          resetForm();
+        }}
+      >
+        {({ isSubmitting }) => (
+          <Form className="comment-form">
+            {/* User Name */}
+            <div className="form-group">
+              <Field
+                type="text"
+                name="userName"
+                placeholder="Enter your name"
+              />
+              <ErrorMessage name="userName" component="div" className="error" />
+            </div>
 
-        {/* Rating */}
-        <label>Rating:</label>
-        <select
-          name="rating"
-          value={formData.rating}
-          onChange={handleChange}
-        >
-          <option value="5">⭐⭐⭐⭐⭐ (5)</option>
-          <option value="4">⭐⭐⭐⭐ (4)</option>
-          <option value="3">⭐⭐⭐ (3)</option>
-          <option value="2">⭐⭐ (2)</option>
-          <option value="1">⭐ (1)</option>
-        </select>
+            {/* Rating */}
+            <div className="form-group">
+              <label>Rating:</label>
+              <Field as="select" name="rating">
+                <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+                <option value="4">⭐⭐⭐⭐ (4)</option>
+                <option value="3">⭐⭐⭐ (3)</option>
+                <option value="2">⭐⭐ (2)</option>
+                <option value="1">⭐ (1)</option>
+              </Field>
+            </div>
 
-        {/* Comment */}
-        <textarea
-          name="comment"
-          placeholder="Write your comment..."
-          value={formData.comment}
-          onChange={handleChange}
-          rows="4"
-        />
+            {/* Comment */}
+            <div className="form-group">
+              <Field
+                as="textarea"
+                name="comment"
+                placeholder="Write your comment..."
+                rows="4"
+              />
+              <ErrorMessage name="comment" component="div" className="error" />
+            </div>
 
-        <button type="submit">Post Comment</button>
-      </form>
+            {/* Submit */}
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Posting..." : "Post Comment"}
+            </button>
+          </Form>
+        )}
+      </Formik>
 
-      {/* ✅ Pass comments to ShowComments */}
+      {/* ✅ Show Comments */}
       <ShowComments comments={comments} />
     </div>
   );
