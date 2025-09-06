@@ -1,0 +1,152 @@
+.comment-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+.comment-container h2 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-form textarea {
+  resize: none;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+.comment-form textarea:focus {
+  outline: none;
+  border: 1px solid #1f6feb;
+}
+
+.comment-form button {
+  padding: 10px;
+  border: none;
+  background: #1f6feb;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.comment-form button:hover {
+  background: #1558c0;
+}
+
+.comment-list {
+  margin-top: 20px;
+}
+
+.comment-list h3 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.comment {
+  padding: 12px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.no-comments {
+  color: #777;
+  font-style: italic;
+}
+.toggle-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  background: #ff9800;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-btn:hover {
+  background: #e68900;
+}
+
+.comments-wrapper {
+  margin-top: 15px;
+}
+.comment-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comment-form input,
+.comment-form select,
+.comment-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.comment-form button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comment-form button:hover {
+  background: #43a047;
+}
+
+.comment-list {
+  margin-top: 20px;
+}
+
+.comment {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comment h4 {
+  margin: 0 0 4px;
+  color: #333;
+}
+
+.comment .rating {
+  font-size: 0.9rem;
+  color: #ff9800;
+  margin-bottom: 6px;
+}

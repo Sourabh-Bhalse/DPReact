@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { genTicket, sum } from "../utils/helper";
 import Ticket from "./Ticket";
 import Message from "./Message";
-import "../styles/Lottery.css";
+import "../styling/Lottery.css";
 
 export default function Lottery() {
   const [ticket, setTicket] = useState(genTicket(3));
