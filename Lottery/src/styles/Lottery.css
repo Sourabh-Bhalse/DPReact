@@ -1,0 +1,133 @@
+ /* 🌟 Page container */
+.lottery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background: linear-gradient(135deg, #cde86d, #2cd4e7); /* modern blue gradient */
+  color: #d5d4d4;
+  font-family: "Poppins", sans-serif;
+  gap: 2rem;
+  text-align: center;
+}
+
+/* 🎯 Title */
+.lottery-container h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #874949;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+/* 🎟️ Ticket wrapper */
+.ticket {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* 🔢 Each number */
+.ticket span {
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  width: clamp(60px, 15vw, 90px);
+  height: clamp(60px, 15vw, 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  background: #f0ebeb;
+  color: #333;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.3s;
+}
+
+/* ✨ Hover effect on numbers */
+.ticket span:hover {
+  transform: scale(1.15);
+  background: #ffe066;
+  border-color: #ffcc00;
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+  cursor: pointer;
+}
+
+/* 🎮 Button styling */
+.lottery-container button {
+  background: linear-gradient(135deg, #d6d940, #f37388); /* pink gradient */
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fffcfc;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.lottery-container button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 118, 136, 0.4);
+}
+
+/* ✅ Ticket winner style */
+.ticket.winner span {
+  background: #03ff4b;
+  border-color: hsl(110, 100%, 48%);
+  color: #2e7d32;
+  box-shadow: 0 0 15px rgba(52, 199, 89, 0.6);
+  animation: pulse 1s infinite alternate;
+}
+
+/* 🏆 Winning message */
+.lottery-container h3.winner {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: #e1d9d9;
+  text-shadow: 0 0 10px rgba(52, 199, 89, 0.9), 0 0 20px rgba(52, 199, 89, 0.6);
+  animation: glowGreen 1.5s infinite alternate;
+}
+
+/* 💡 Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 💚 Pulse animation for winning numbers */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 6px rgba(52, 199, 89, 0.4);
+  }
+  to {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(52, 199, 89, 0.9);
+  }
+}
+
+/* 🌟 Glow animation for success message */
+@keyframes glowGreen {
+  from {
+    text-shadow: 0 0 6px rgba(52, 199, 89, 0.6), 0 0 15px rgba(52, 199, 89, 0.4);
+  }
+  to {
+    text-shadow: 0 0 12px rgba(52, 199, 89, 1), 0 0 25px rgba(52, 199, 89, 0.8);
+  }
+}
