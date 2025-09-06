@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styling/Form.css";
 export default function Form() {
-  // ✅ Single state object for all fields
+  // ✅ Singl state object for all fields
   const [formData, setFormData] = useState({
     fullName: "",
     userName: "",
