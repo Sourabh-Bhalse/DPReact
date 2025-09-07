@@ -1,14 +1,10 @@
-import React from 'react'
-import SearchBox from './SearchBox'
-import WeatherInfoBox from './WeatherInfoBox'
+ import React from "react";
+import SearchBox from "./SearchBox";
 
-export default function WetherApp  ()  {
+export default function WetherApp() {
   return (
-    <div style={{textAlign:"center", marginTop:"20px"}}>
-        <h2>Weather App by @Sourabh</h2>
-        <SearchBox />
-        <WeatherInfoBox />
-      
+    <div style={{ textAlign: "center", marginTop: "20px", padding: "10px" }}>
+      <SearchBox />
     </div>
-  )
+  );
 }
